@@ -26,7 +26,7 @@
 
 <!-- show in a template if hero selected exist with  -->
 <div *ngIf="selectedHero">
-    <h2>{{selectedHero.name}} details!</h2>
+    <h2>{{selectedHero.name}} details! with selected 1 </h2>ls
     <div><label>id: </label>{{selectedHero.id}}</div>
     <div>
       <label>name: </label>
@@ -34,3 +34,5 @@
       <input [(ngModel)]="selectedHero.name" placeholder="name"/>
     </div>
  </div>
+
+ <app-hero-detail [hero]= "selectedHero"></app-hero-detail>
