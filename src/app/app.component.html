@@ -14,3 +14,23 @@
     <input [(ngModel)]= "hero.name" placeholder="name">
 </div>
 
+<h2>My Heroes</h2>
+<ul class="heroes">
+    <!-- loop for each li ,hero goes here call onSelect event of component-->
+  <li *ngFor="let hero of heroes"
+      [class.selected]="hero === selectedHero"
+      (click)="onSelect(hero)"> <!-- style selected li, When the expression (hero === selectedHero) is true, Angular adds the selected CSS class.-->
+        <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>
+
+<!-- show in a template if hero selected exist with  -->
+<div *ngIf="selectedHero">
+    <h2>{{selectedHero.name}} details!</h2>
+    <div><label>id: </label>{{selectedHero.id}}</div>
+    <div>
+      <label>name: </label>
+      <!-- two bonding inter selectedHero template and component  -->
+      <input [(ngModel)]="selectedHero.name" placeholder="name"/>
+    </div>
+ </div>
