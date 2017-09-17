@@ -5,6 +5,20 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
-  title = 'app';
+
+  title = 'Tour of Heroes';
+  // hero = 'winstorm' its a string var
+  // initialise an objet of class hero
+  hero: Hero = {
+    id: 1,
+    name: 'Windstorm'
+  };
+}
+
+// declare an hero class
+export class Hero {
+  id: number;
+  name: string;
 }
